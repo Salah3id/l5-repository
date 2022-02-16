@@ -66,12 +66,12 @@ class ControllerCommand extends Command
         try {
             // Generate create request for controller
             $this->call('make:request', [
-                'name' => $this->argument('name') . 'CreateRequest'
+                'name' => 'Create\\'.$this->argument('name') . 'CreateRequest'
             ]);
 
             // Generate update request for controller
             $this->call('make:request', [
-                'name' => $this->argument('name') . 'UpdateRequest'
+                'name' => 'Update\\'.$this->argument('name') . 'UpdateRequest'
             ]);
 
             (new ControllerGenerator([

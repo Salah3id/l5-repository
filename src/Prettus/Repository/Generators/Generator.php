@@ -141,7 +141,7 @@ abstract class Generator
         if (Str::contains($this->name, '/')) {
             $name = str_replace('/', '/', $this->name);
         }
-
+    
         return Str::studly(str_replace(' ', '/', ucwords(str_replace('/', ' ', $name))));
     }
 
@@ -201,31 +201,34 @@ abstract class Generator
     {
         switch ($class) {
             case ('models' === $class):
-                $path = config('repository.generator.paths.models', 'Entities');
+                $path = 'domains\\'.$this->getClass().'\\'. config('repository.generator.paths.models', 'Entities');
                 break;
             case ('repositories' === $class):
-                $path = config('repository.generator.paths.repositories', 'Repositories');
+                $path = 'domains\\'.$this->getClass().'\\'. config('repository.generator.paths.repositories', 'Repositories');
                 break;
             case ('interfaces' === $class):
-                $path = config('repository.generator.paths.interfaces', 'Repositories');
+                $path = 'domains\\'.$this->getClass().'\\'. config('repository.generator.paths.interfaces', 'Repositories');
                 break;
             case ('presenters' === $class):
-                $path = config('repository.generator.paths.presenters', 'Presenters');
+                $path = 'domains\\'.$this->getClass().'\\'. config('repository.generator.paths.presenters', 'Presenters');
                 break;
             case ('transformers' === $class):
-                $path = config('repository.generator.paths.transformers', 'Transformers');
+                $path = 'domains\\'.$this->getClass().'\\'. config('repository.generator.paths.transformers', 'Transformers');
                 break;
             case ('validators' === $class):
-                $path = config('repository.generator.paths.validators', 'Validators');
+                $path = 'domains\\'.$this->getClass().'\\'. config('repository.generator.paths.validators', 'Validators');
                 break;
             case ('controllers' === $class):
-                $path = config('repository.generator.paths.controllers', 'Http\Controllers');
+                $path = 'domains\\'.$this->getClass().'\\'. config('repository.generator.paths.controllers', 'Http\Controllers');
                 break;
             case ('provider' === $class):
                 $path = config('repository.generator.paths.provider', 'RepositoryServiceProvider');
                 break;
             case ('criteria' === $class):
-                $path = config('repository.generator.paths.criteria', 'Criteria');
+                $path = 'domains\\'.$this->getClass().'\\'. config('repository.generator.paths.criteria', 'Criteria');
+                break;
+            case ('migrations' === $class):
+                $path = 'domains\\'.$this->name.'\\'. config('repository.generator.paths.migrations', 'Database\Migrations');
                 break;
             default:
                 $path = '';
