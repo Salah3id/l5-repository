@@ -5,6 +5,7 @@ namespace Prettus\Repository\Generators;
 use Prettus\Repository\Generators\Migrations\NameParser;
 use Prettus\Repository\Generators\Migrations\SchemaParser;
 use Symfony\Component\HttpFoundation\File\Exception\FileNotFoundException;
+use Illuminate\Support\Str;
 
 /**
  * Class MigrationGenerator
@@ -29,7 +30,18 @@ class MigrationGenerator extends Generator
      */
     public function getBasePath()
     {
-        return base_path() . '/database/migrations/';
+        return base_path('app') . '\\domains\\'.$this->getDomainName().'\\'.'Database\\Migrations\\';
+        
+    }
+
+    /**
+     * Get base path of destination file.
+     *
+     * @return string
+     */
+    public function getDomainName()
+    {
+        return Str::singular(explode("_", $this->name)[1]);
     }
 
 

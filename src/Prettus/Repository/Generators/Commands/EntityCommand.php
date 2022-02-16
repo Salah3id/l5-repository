@@ -50,6 +50,11 @@ class EntityCommand extends Command
      */
     public function fire()
     {
+        if ($this->confirm('Would you like to create a Domain? [y|N]')) {
+            $this->runCommand('module:make', [
+                'name'    => [$this->argument('name')],
+            ], $this->output);
+        }
 
         if ($this->confirm('Would you like to create a Presenter? [y|N]')) {
             $this->call('make:presenter', [
