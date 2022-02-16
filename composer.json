@@ -1,5 +1,5 @@
 {
-  "name": "myrna/repository-modules",
+  "name": "myrna/repository",
   "description": "Laravel 5|6|7|8 - Repositories to  the database layer in modules pattern -- Forked from http://andersao.github.io/l5-repository",
   "keywords": [
     "laravel",
