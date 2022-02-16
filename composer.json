@@ -1,6 +1,6 @@
 {
-  "name": "prettus/l5-repository",
-  "description": "Laravel 5|6|7|8 - Repositories to  the database layer",
+  "name": "Myrna/repository-modules",
+  "description": "Laravel 5|6|7|8 - Repositories to  the database layer in modules pattern -- Forked from http://andersao.github.io/l5-repository",
   "keywords": [
     "laravel",
     "repository",
@@ -14,6 +14,12 @@
       "name": "Anderson Andrade",
       "homepage": "http://andersonandra.de",
       "email": "contato@andersonandra.de",
+      "role": "Developer"
+    },
+    {
+      "name": "Salah Eid",
+      "homepage": "https://www.linkedin.com/in/salah3id/",
+      "email": "salah.enm@gmail.com",
       "role": "Developer"
     }
   ],
@@ -38,7 +44,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Prettus\\Repository\\": "src/Prettus/Repository/"
+      "Myrna\\Repository\\": "src/Myrna/Repository/"
     }
   },
   "config": {
@@ -52,7 +58,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Prettus\\Repository\\Providers\\RepositoryServiceProvider"
+        "Myrna\\Repository\\Providers\\RepositoryServiceProvider"
       ]
     }
   },
